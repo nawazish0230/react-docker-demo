@@ -1,0 +1,18 @@
+version: "3"
+services:
+  react-demo-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - REACT_APP_NAME=nawazish
+      - REACT_APP_URL=http://trinkerr.com
+    # env_file:
+    #   - ./.env
+
+
+# docker-compose up -> to run docker using this file
+# docker-compose down -> to down docker using this file
+# docker-compose up -d --build -> to up and re-build the file

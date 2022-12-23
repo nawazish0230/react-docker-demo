@@ -1,0 +1,16 @@
+docker build . -> to build docker image
+docker build -t <imagename>(react-docker-demo) . -> to build docker image with name
+docker image ls -> to check images
+docker image rm <dockerId> -> to delete docker image
+
+docker run -d --name <localreactapp>(react-demo-app) <dockerimagename>(react-docker-demo) -> to run docker with local name 
+docker run -d -p 3000:3000 --name <localreactapp>(react-demo-app) <dockerimagename>(react-docker-demo) -> to run docker along with port number 
+docker run -d -v $(pwd):/app/src -p 3000:3000 --name <localreactapp>(react-demo-app) <dockerimagename>(react-docker-demo) -> to run docker along with port number 
+docker run -e REACT_APP_NAME=lucky -d -v $(pwd):/app/src -p 3000:3000 --name <localreactapp>(react-demo-app) <dockerimagename>(react-docker-demo) -> to run docker and override the env vars
+docker run --env-file ./.env  -v $(pwd)/src:/app/src:ro -d -p 3000:3000 --name react-demo-app react-docker-demo -> run docker along with env file
+
+
+docker ps -> to check all the running container
+docker rm <localreactapp>react-demo-app -f  -> to kill running container
+docker exec -it <localreactapp>react-demo-app bash -> enter into bash mode
+cat <filename> -> print value from file
